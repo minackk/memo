@@ -1,0 +1,30 @@
+if !has('gui_running')
+  finish
+endif
+
+"カラースキーマの設定
+colorscheme hybrid
+set background=dark
+
+"フォントの設定
+set guifont=MeiryoKe_Console:h9:cSHIFTJIS:qDRAFT
+
+"ビープ音を無効にする
+set visualbell t_vb=
+
+"どのモードでもマウスを利用できるようにする
+set mouse=a
+
+set columns=150
+set lines=50
+
+set tabstop=4
+set expandtab
+set number
+
+set nobackup
+set hidden
+set nowrap
+set noswapfile
+
+
