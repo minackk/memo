@@ -39,7 +39,17 @@ set cursorline
 set noundofile
 set shell=C:\windows\system32\cmd.exe
 
+"C++ê›íË
+function! CppVimrcOnFileType_cpp()
+    setlocal tabstop=4
+    setlocal shiftwidth=4
+endfunction
+
 inoremap jj <ESC>
 nnoremap <C-]> g<C-]>
 
+augroup vimrc-cpp
+    autocmd!
+    autocmd FileType cpp call s:CppVimrcOnFileType_cpp()
+augroup END
 
