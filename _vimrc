@@ -35,21 +35,20 @@ set background=dark
 colorscheme hybrid
 syntax on
 
+set showmode
 set cursorline
 set noundofile
-set shell=C:\windows\system32\cmd.exe
+set autoindent
+set smartindent
+set cindent
 
-"C++ê›íË
-function! CppVimrcOnFileType_cpp()
-    setlocal tabstop=4
-    setlocal shiftwidth=4
-endfunction
+set tabstop=2 shiftwidth=2 softtabstop=0
+
+autocmd FileType cpp setlocal sw=4 sts=4 ts=4 et
+
+set shell=C:\windows\system32\cmd.exe
 
 inoremap jj <ESC>
 nnoremap <C-]> g<C-]>
 
-augroup vimrc-cpp
-    autocmd!
-    autocmd FileType cpp call s:CppVimrcOnFileType_cpp()
-augroup END
 
