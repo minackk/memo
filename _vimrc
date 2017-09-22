@@ -1,15 +1,16 @@
 """
 " Dein TOML
 " プラグインが実際にインストールされるディレクトリ
+" http://d.hatena.ne.jp/osyo-manga/20130307/1362621589
 let s:dein_dir = expand('~\.cache\dein')
 " dein.vim 本体
 let s:dein_repo_dir = s:dein_dir . '\repos\github.com\Shougo\dein.vim'
 " dein.vim がなければ github から落としてくる
 if &runtimepath !~# '/dein.vim'
-    if !isdirectory(s:dein_repo_dir)
-        execute '!git clone https://github.com/Shougo/dein.vim' s:dein_repo_dir
-    endif
-    execute 'set runtimepath^=' . s:dein_repo_dir
+  if !isdirectory(s:dein_repo_dir)
+    execute '!git clone https://github.com/Shougo/dein.vim' s:dein_repo_dir
+  endif
+  execute 'set runtimepath^=' . s:dein_repo_dir
 endif
 " 設定開始
 if dein#load_state(s:dein_dir)
@@ -48,7 +49,10 @@ autocmd FileType cpp setlocal sw=4 sts=4 ts=4 et
 
 set shell=C:\windows\system32\cmd.exe
 
+let g:neocomplete#enable_at_startup = 1
+
 inoremap jj <ESC>
 nnoremap <C-]> g<C-]>
-
+nnoremap <silent> <leader>l :<C-u>Unite outline<CR>
+nnoremap <silent> <leader>b :<C-u>Unite buffer<CR>
 
